@@ -3,12 +3,11 @@ package com.example.tutorpet
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import java.lang.Exception
 
 class SplashActivity : AppCompatActivity() {
 
-   val TIME_IN_SPLASH  =  (3000).toLong()
+   val TIME_IN_SPLASH  =  (30000).toLong()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
