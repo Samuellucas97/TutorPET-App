@@ -8,11 +8,20 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tutorpet.R
+import com.example.tutorpet.adapter.MonitoriaAgendadaAdapter
+import com.example.tutorpet.model.MonitoriaAgendada
+import kotlinx.android.synthetic.main.fragment_monitorias.*
 
 class MonitoriasFragment : Fragment() {
 
     private lateinit var monitoriasViewModel: MonitoriasViewModel
+
+    private var listMonitoriasAgendadas = mutableListOf<MonitoriaAgendada>()
+
+    private var monitoriaAgendadaAdapter = MonitoriaAgendadaAdapter( listMonitoriasAgendadas,
+        this::onMonitoriaAgendadaItemLongClick, this::onMonitoriaAgendadaItemClick)
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,6 +35,22 @@ class MonitoriasFragment : Fragment() {
         monitoriasViewModel.text.observe(this, Observer {
             textView.text = it
         })
+
+        rvMonitorias.adapter = monitoriaAgendadaAdapter
+        rvMonitorias.layoutManager = LinearLayoutManager(context)
+
         return root
     }
+
+    private fun onMonitoriaAgendadaItemLongClick(monitoriaAgendada: MonitoriaAgendada): Boolean {
+        // TODO
+
+        return true
+    }
+
+    private fun onMonitoriaAgendadaItemClick(monitoriaAgendada: MonitoriaAgendada) {
+        // TODO
+    }
+
+
 }
