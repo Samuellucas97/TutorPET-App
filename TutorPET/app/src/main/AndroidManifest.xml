@@ -18,7 +18,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ConversasActivity"
+            android:name=".HomeActivity"
             android:label="@string/title_activity_conversas"></activity>
         <activity android:name=".LoginActivity" />
     </application>

@@ -3,7 +3,6 @@ package com.example.tutorpet
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import java.lang.Exception
 
 class SplashActivity : AppCompatActivity() {
@@ -18,7 +17,7 @@ class SplashActivity : AppCompatActivity() {
             override fun run() {
                 try {
                     Thread.sleep( TIME_IN_SPLASH)
-                    val intent = Intent(baseContext, ConversasActivity::class.java)
+                    val intent = Intent(baseContext, HomeActivity::class.java)
 
                     startActivity(intent)
 
