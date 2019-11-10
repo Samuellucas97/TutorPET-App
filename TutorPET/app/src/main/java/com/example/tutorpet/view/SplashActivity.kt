@@ -1,14 +1,14 @@
-package com.example.tutorpet
+package com.example.tutorpet.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.tutorpet.view.HomeActivity
+import com.example.tutorpet.R
 import java.lang.Exception
 
 class SplashActivity : AppCompatActivity() {
 
-   val TIME_IN_SPLASH  =  (30000).toLong()
+   val TIME_IN_SPLASH  =  (3000).toLong()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
