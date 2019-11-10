@@ -37,14 +37,6 @@ class MonitoriasFragment : Fragment() {
     ): View? = inflater.inflate(R.layout.fragment_monitorias, container, false)
 
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-
-        rvMonitorias.adapter = monitoriaAgendadaAdapter
-        rvMonitorias.layoutManager = LinearLayoutManager(context)
-
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
