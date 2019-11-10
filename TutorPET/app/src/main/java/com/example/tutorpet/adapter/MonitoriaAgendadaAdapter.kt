@@ -50,12 +50,13 @@ class MonitoriaAgendadaAdapter(
     override fun onBindViewHolder(holder: VH, position: Int) {
         val (id, diaDaSemana, hora, local, nome , materiaMonitoria) = listMonitoriasAgendadas[position]
 
-        holder.apply {
+        holder. apply {
             txtDiaDaSemana.text = diaDaSemana
             txtHora.text = hora
             txtLocal.text = local
             txtNome.text = nome
             txtMateriaMonitoria.text = materiaMonitoria
+
         }
     }
 }
