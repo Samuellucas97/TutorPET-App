@@ -12,19 +12,39 @@
 
     <ImageView
         android:id="@+id/imageViewLogoPET"
-        android:layout_width="wrap_content"
+        android:layout_width="215dp"
+        android:layout_height="221dp"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/logo"
-        android:layout_marginBottom="70dp"
+        android:gravity="center"
+        android:text="Conecte-se com sua conta SIGAA"
+        android:layout_marginBottom="40dp" />
+
+
+    <EditText
+        android:layout_width="270dp"
+        android:hint="Usuário"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:layout_width="270dp"
+        android:hint="Senha"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
         />
 
-
-    <Button
+i    <Button
         android:id="@+id/btnEntrar"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:text="ENTRAR VIA SIGAA"
         style="@style/Widget.AppCompat.Button.Colored"
-        />
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:text="ENTRAR" />
+
+
+
+
 
 </LinearLayout>

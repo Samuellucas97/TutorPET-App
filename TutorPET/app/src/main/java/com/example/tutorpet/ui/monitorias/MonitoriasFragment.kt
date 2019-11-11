@@ -42,15 +42,6 @@ class MonitoriasFragment : Fragment() {
         lerDados()
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        rvMonitorias.apply {
-            layoutManager = LinearLayoutManager(activity)
-            adapter = monitoriaAgendadaAdapter
-        }
-    }
-
     private fun onMonitoriaAgendadaItemLongClick(monitoriaAgendada: MonitoriaAgendada): Boolean {
         return true
     }
