@@ -1,10 +1,10 @@
 package com.example.tutorpet.model
 
 data class MonitoriaAgendada (
-    var id: String = "",
-    var diaDaSemana: String = "",
-    var hora: String = "",
-    var local: String = "",
-    var nome: String = "",
-    var materiaMonitoria: String = ""
+    var id: String="",
+    var diaDaSemana: String = "Segunda",
+    var hora: String = "15pm",
+    var local: String = "IMD",
+    var nome: String = "Paulo",
+    var materiaMonitoria: String = "Projeto de Sistemas Operacionais"
 )
