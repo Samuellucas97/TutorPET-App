@@ -1,5 +1,6 @@
 package com.example.tutorpet.ui.monitorias
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tutorpet.R
 import com.example.tutorpet.adapter.MonitoriaAgendadaAdapter
 import com.example.tutorpet.model.MonitoriaAgendada
+import com.example.tutorpet.view.AddMonitorias
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_monitorias.*
 import org.json.JSONObject
@@ -40,6 +42,10 @@ class MonitoriasFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         lerDados()
+
+        fabAdd.setOnClickListener {
+            startActivity(Intent(activity, AddMonitorias::class.java ))
+        }
     }
 
     private fun onMonitoriaAgendadaItemLongClick(monitoriaAgendada: MonitoriaAgendada): Boolean {
