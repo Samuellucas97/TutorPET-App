@@ -7,8 +7,8 @@
         android:title="@string/conversas" />
 
     <item
-        android:id="@+id/navigation_monitorias"
+        android:id="@+id/navigation_tutorias"
         android:icon="@drawable/ic_monitoria_black_24dp"
-        android:title="Monitorias" />
+        android:title="Tutorias" />
 
 </menu>

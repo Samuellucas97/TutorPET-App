@@ -4,15 +4,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tutorpet.R
-import com.example.tutorpet.model.MonitoriaAgendada
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.android.synthetic.main.activity_add_monitorias.*
-import kotlinx.android.synthetic.main.fragment_monitorias.*
+import kotlinx.android.synthetic.main.activity_add_disciplina_tutoria.*
 import org.json.JSONObject
 
-class AddMonitorias : AppCompatActivity() {
+class AddDisciplinaTutoria : AppCompatActivity() {
 
     var listMonitorias = arrayListOf<String>()
 
@@ -20,7 +17,7 @@ class AddMonitorias : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_monitorias)
+        setContentView(R.layout.activity_add_disciplina_tutoria)
 
         this.lerDados()
     }

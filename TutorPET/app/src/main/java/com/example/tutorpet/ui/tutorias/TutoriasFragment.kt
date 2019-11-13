@@ -1,4 +1,4 @@
-package com.example.tutorpet.ui.monitorias
+package com.example.tutorpet.ui.tutorias
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,21 +9,21 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tutorpet.R
-import com.example.tutorpet.adapter.MonitoriaAgendadaAdapter
-import com.example.tutorpet.model.MonitoriaAgendada
-import com.example.tutorpet.view.AddMonitorias
+import com.example.tutorpet.adapter.TutoriaAgendadaAdapter
+import com.example.tutorpet.model.TutoriaAgendada
+import com.example.tutorpet.view.AddDisciplinaTutoria
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.android.synthetic.main.fragment_monitorias.*
+import kotlinx.android.synthetic.main.fragment_tutorias.*
 import org.json.JSONObject
 
-class MonitoriasFragment : Fragment() {
+class TutoriasFragment : Fragment() {
 
-    private var listMonitoriasAgendadas = mutableListOf<MonitoriaAgendada>()
+    private var listMonitoriasAgendadas = mutableListOf<TutoriaAgendada>()
 
-    private var monitoriaAgendadaAdapter = MonitoriaAgendadaAdapter( listMonitoriasAgendadas,
+    private var monitoriaAgendadaAdapter = TutoriaAgendadaAdapter( listMonitoriasAgendadas,
         this::onMonitoriaAgendadaItemLongClick, this::onMonitoriaAgendadaItemClick)
 
-    lateinit var monitoriaAgendada: MonitoriaAgendada
+    lateinit var tutoriaAgendada: TutoriaAgendada
 
     val db = FirebaseFirestore.getInstance()
 
@@ -36,7 +36,7 @@ class MonitoriasFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? = inflater.inflate(R.layout.fragment_monitorias, container, false)
+    ): View? = inflater.inflate(R.layout.fragment_tutorias, container, false)
 
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -44,15 +44,15 @@ class MonitoriasFragment : Fragment() {
         lerDados()
 
         fabAdd.setOnClickListener {
-            startActivity(Intent(activity, AddMonitorias::class.java ))
+            startActivity(Intent(activity, AddDisciplinaTutoria::class.java ))
         }
     }
 
-    private fun onMonitoriaAgendadaItemLongClick(monitoriaAgendada: MonitoriaAgendada): Boolean {
+    private fun onMonitoriaAgendadaItemLongClick(tutoriaAgendada: TutoriaAgendada): Boolean {
         return true
     }
 
-    private fun onMonitoriaAgendadaItemClick(monitoriaAgendada: MonitoriaAgendada) {
+    private fun onMonitoriaAgendadaItemClick(tutoriaAgendada: TutoriaAgendada) {
     }
 
     fun lerDados(){
@@ -64,7 +64,7 @@ class MonitoriasFragment : Fragment() {
             .addOnSuccessListener {result ->
                 for(doc in result){
                     var jo = JSONObject(doc.data)
-                    var monitoriaAgendada = MonitoriaAgendada(
+                    var monitoriaAgendada = TutoriaAgendada(
                         id = doc.id,
                         diaDaSemana = jo.getString("diaDaSemana"),
                         hora = jo.getString("hora"),
@@ -86,14 +86,14 @@ class MonitoriasFragment : Fragment() {
 
 //    fun addDados() {
 //
-//        val monitoriaAgendada = MonitoriaAgendada()
+//        val tutoriaAgendada = TutoriaAgendada()
 //
 //        val u = mapOf(
-//            "diaDaSemana" to monitoriaAgendada.diaDaSemana,
-//            "hora" to monitoriaAgendada.hora,
-//            "local" to monitoriaAgendada.local,
-//            "nome" to monitoriaAgendada.nome,
-//            "materiaMonitoria" to monitoriaAgendada.materiaMonitoria
+//            "diaDaSemana" to tutoriaAgendada.diaDaSemana,
+//            "hora" to tutoriaAgendada.hora,
+//            "local" to tutoriaAgendada.local,
+//            "nome" to tutoriaAgendada.nome,
+//            "materiaMonitoria" to tutoriaAgendada.materiaMonitoria
 //        )
 //
 //        db.collection("monitoriasAgendadas")

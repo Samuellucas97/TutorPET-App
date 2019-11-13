@@ -2,5 +2,5 @@
     <string name="app_name">TutorPET</string>
     <string name="title_activity_conversas">ConversasActivity</string>
     <string name="conversas">Conversas</string>
-    <string name="monitorias">Monitorias</string>
+    <string name="tutorias">Tutorias</string>
 </resources>

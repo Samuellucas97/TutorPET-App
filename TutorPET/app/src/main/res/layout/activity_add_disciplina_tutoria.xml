@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".view.AddMonitorias"
+    tools:context=".view.AddDisciplinaTutoria"
     >
 
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Monitorias Disponiveis"
+        android:text="Tutorias Disponiveis"
         android:textStyle="bold"
         android:gravity="center"
         android:textColor="@android:color/white"

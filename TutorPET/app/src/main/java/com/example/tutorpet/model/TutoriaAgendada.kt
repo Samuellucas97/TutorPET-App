@@ -1,6 +1,6 @@
 package com.example.tutorpet.model
 
-data class MonitoriaAgendada (
+data class TutoriaAgendada (
     var id: String="",
     var diaDaSemana: String = "Segunda",
     var hora: String = "15pm",

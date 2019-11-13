@@ -6,16 +6,16 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tutorpet.R
-import com.example.tutorpet.model.MonitoriaAgendada
-import kotlinx.android.synthetic.main.item_monitoria_agendada.view.*
+import com.example.tutorpet.model.TutoriaAgendada
+import kotlinx.android.synthetic.main.item_tutoria_agendada.view.*
 
-class MonitoriaAgendadaAdapter(
+class TutoriaAgendadaAdapter(
 
-    private val listMonitoriasAgendadas: List<MonitoriaAgendada>,
-    private val callback: (MonitoriaAgendada) -> Boolean,   // Usado no click longo
-    private val callbackTwo: (MonitoriaAgendada) -> Unit    // Usado no click curto
+    private val listTutoriasAgendadas: List<TutoriaAgendada>,
+    private val callback: (TutoriaAgendada) -> Boolean,   // Usado no click longo
+    private val callbackTwo: (TutoriaAgendada) -> Unit    // Usado no click curto
 
-): RecyclerView.Adapter<MonitoriaAgendadaAdapter.VH> () {
+): RecyclerView.Adapter<TutoriaAgendadaAdapter.VH> () {
 
     class VH(itemView: View): RecyclerView.ViewHolder(itemView) {
         val txtDiaDaSemana: TextView = itemView.txtDiaDaSemana
@@ -29,26 +29,26 @@ class MonitoriaAgendadaAdapter(
 
         val v = LayoutInflater
             .from(parent.context)
-            .inflate(R.layout.item_monitoria_agendada, parent, false)
+            .inflate(R.layout.item_tutoria_agendada, parent, false)
 
         val viewHolder = VH(v)
         viewHolder.itemView.setOnLongClickListener{
-            val monitoriaAgendada = listMonitoriasAgendadas[viewHolder.adapterPosition]
-            callback(monitoriaAgendada)
+            val tutoriaAgendada = listTutoriasAgendadas[viewHolder.adapterPosition]
+            callback(tutoriaAgendada)
         }
 
         viewHolder.itemView.setOnClickListener {
-            val monitoriaAgendada = listMonitoriasAgendadas[viewHolder.adapterPosition]
-            callbackTwo(monitoriaAgendada)
+            val tutoriaAgendada = listTutoriasAgendadas[viewHolder.adapterPosition]
+            callbackTwo(tutoriaAgendada)
         }
 
         return viewHolder
     }
 
-    override fun getItemCount(): Int = listMonitoriasAgendadas.size
+    override fun getItemCount(): Int = listTutoriasAgendadas.size
 
     override fun onBindViewHolder(holder: VH, position: Int) {
-        val (id, diaDaSemana, hora, local, nome , materiaMonitoria) = listMonitoriasAgendadas[position]
+        val (id, diaDaSemana, hora, local, nome , materiaMonitoria) = listTutoriasAgendadas[position]
 
         holder. apply {
             txtDiaDaSemana.text = diaDaSemana
