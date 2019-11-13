@@ -22,7 +22,7 @@ class HomeActivity : AppCompatActivity() {
         val appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.navigation_conversas,
-                R.id.navigation_monitorias
+                R.id.navigation_tutorias
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

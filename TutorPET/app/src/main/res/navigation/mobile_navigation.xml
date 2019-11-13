@@ -3,18 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_conversas">
+    app:startDestination="@+id/navigation_tutorias">
 
     <fragment
         android:id="@+id/navigation_conversas"
         android:name="com.example.tutorpet.ui.conversas.ConversasFragment"
-        android:label="@string/title_conversas"
+        android:label="@string/conversas"
         tools:layout="@layout/fragment_conversas" />
 
     <fragment
-        android:id="@+id/navigation_monitorias"
-        android:name="com.example.tutorpet.ui.monitorias.MonitoriasFragment"
-        android:label="@string/title_monitorias"
-        tools:layout="@layout/fragment_monitorias" />
+        android:id="@+id/navigation_tutorias"
+        android:name="com.example.tutorpet.ui.tutorias.TutoriasFragment"
+        android:label="@string/tutorias"
+        tools:layout="@layout/fragment_tutorias" />
 
 </navigation>

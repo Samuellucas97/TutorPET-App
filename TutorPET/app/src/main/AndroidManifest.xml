@@ -9,8 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".monitoriasActivity"></activity>
-        <activity android:name=".view.SplashActivity"
+        <activity android:name=".view.AddDisciplinaTutoria"></activity>
+        <activity android:name=".monitoriasActivity" />
+        <activity
+            android:name=".view.SplashActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,8 +22,9 @@
         </activity>
         <activity
             android:name=".view.HomeActivity"
-            android:label="@string/title_activity_conversas"></activity>
-        <activity android:name=".LoginActivity" />
+            android:label="@string/title_activity_conversas" />
+        <activity android:name=".LoginActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
     </application>
 
 </manifest>

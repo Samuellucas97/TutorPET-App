@@ -4,11 +4,11 @@
     <item
         android:id="@+id/navigation_conversas"
         android:icon="@drawable/ic_forum_black_24dp"
-        android:title="@string/title_conversas" />
+        android:title="@string/conversas" />
 
     <item
-        android:id="@+id/navigation_monitorias"
+        android:id="@+id/navigation_tutorias"
         android:icon="@drawable/ic_monitoria_black_24dp"
-        android:title="@string/title_monitorias" />
+        android:title="Tutorias" />
 
 </menu>
