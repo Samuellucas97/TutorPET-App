@@ -7,6 +7,7 @@ import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.activity_chat.*
+import kotlinx.android.synthetic.main.item_chat_to.view.*
 
 class ChatActivity : AppCompatActivity() {
 
@@ -15,21 +16,33 @@ class ChatActivity : AppCompatActivity() {
         setContentView(R.layout.activity_chat)
 
         val adapter = GroupAdapter<ViewHolder>()
-        adapter.add(ChatItem())
-        adapter.add(ChatItem())
-        adapter.add(ChatItem())
-        adapter.add(ChatItem())
+        adapter.add(ChatItemFromAdapter("Oi"))
+        adapter.add(ChatItemFromAdapter("Oi"))
+        adapter.add(ChatItemTo("Como vai?"))
+        adapter.add(ChatItemTo("Bem."))
+
         rvChat.adapter = adapter
 
     }
-}
 
+    class ChatItemFromAdapter(val text: String): Item<ViewHolder>() {
 
-class ChatItem: Item<ViewHolder>() {
-
-    override fun bind(viewHolder: ViewHolder, position: Int) {
+        override fun bind(viewHolder: ViewHolder, position: Int) {
+            viewHolder.itemView.textView.text = text
+        }
+        override fun getLayout(): Int = R.layout.item_chat_from
 
     }
-    override fun getLayout(): Int = R.layout.item_chat_from
 
+
+    class ChatItemTo(val text: String): Item<ViewHolder>() {
+
+        override fun bind(viewHolder: ViewHolder, position: Int) {
+            viewHolder.itemView.textView.text = text
+        }
+        override fun getLayout(): Int = R.layout.item_chat_to
+
+    }
 }
+
+
