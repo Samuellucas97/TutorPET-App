@@ -1,5 +1,6 @@
 package com.example.tutorpet.ui.conversas
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tutorpet.R
 import com.example.tutorpet.adapter.ConversaAdapter
 import com.example.tutorpet.model.Conversa
+import com.example.tutorpet.view.ChatActivity
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_conversas.*
 import org.json.JSONObject
@@ -46,7 +48,7 @@ class ConversasFragment : Fragment() {
     }
 
     private fun onConversaItemClick(conversa: Conversa) {
-
+        startActivity(Intent(activity, ChatActivity::class.java))
     }
 
 
