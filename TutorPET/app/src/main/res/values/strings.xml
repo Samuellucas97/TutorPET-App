@@ -3,4 +3,5 @@
     <string name="title_activity_conversas">ConversasActivity</string>
     <string name="conversas">Conversas</string>
     <string name="tutorias">Tutorias</string>
+    <string name="title_activity_tutoria_location">Map</string>
 </resources>

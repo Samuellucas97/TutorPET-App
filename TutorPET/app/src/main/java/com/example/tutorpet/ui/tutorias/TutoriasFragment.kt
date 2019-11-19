@@ -1,5 +1,6 @@
 package com.example.tutorpet.ui.tutorias
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,6 +13,7 @@ import com.example.tutorpet.R
 import com.example.tutorpet.adapter.TutoriaAgendadaAdapter
 import com.example.tutorpet.model.TutoriaAgendada
 import com.example.tutorpet.view.AddDisciplinaTutoria
+import com.example.tutorpet.view.Tutoria_location
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_tutorias.*
 import org.json.JSONObject
@@ -30,7 +32,10 @@ class TutoriasFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         retainInstance = true
+
+
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -53,6 +58,10 @@ class TutoriasFragment : Fragment() {
     }
 
     private fun onMonitoriaAgendadaItemClick(tutoriaAgendada: TutoriaAgendada) {
+        " Direciona o usuráio para a localização da tutoria agendada "
+
+        var intent = Intent(activity, Tutoria_location::class.java)
+        startActivity( intent )
     }
 
     fun lerDados(){
