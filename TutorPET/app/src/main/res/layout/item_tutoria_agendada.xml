@@ -6,10 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="4dp"
-    app:cardCornerRadius="8dp">
+    app:cardCornerRadius="8dp"
+
+    >
 
 
-<LinearLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="?attr/selectableItemBackground"
@@ -25,29 +27,29 @@
                 android:id="@+id/txtDiaDaSemana"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:text="Dia"
                 android:layout_marginEnd="10dp"
-                android:layout_marginRight="10dp" />
+                android:layout_marginRight="10dp"
+                android:text="Dia"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/txtHora"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:text="Hora"
                 android:layout_marginEnd="10dp"
-                android:layout_marginRight="10dp" />
+                android:layout_marginRight="10dp"
+                android:text="Hora"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/txtLocal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Local"
                 android:textSize="20sp"
-                android:textStyle="bold"
-                android:text="Local" />
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -60,32 +62,32 @@
                 android:id="@+id/txtNome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:text="Nome"
                 android:layout_marginEnd="10dp"
-                android:layout_marginRight="10dp" />
+                android:layout_marginRight="10dp"
+                android:text="Nome"
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/txtMateriaMonitoria"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:text="Materia monitoria" />
+                android:text="Materia monitoria"
+                android:textSize="15sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp">
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp">
 
             <Button
                 android:id="@+id/btnRemarcar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Remarcar"
-                android:layout_marginRight="10dp"/>
+                android:layout_marginRight="10dp"
+                android:text="Remarcar" />
 
             <Button
                 android:id="@+id/btnCancelar"

@@ -11,7 +11,7 @@ import org.json.JSONObject
 
 class AddDisciplinaTutoria : AppCompatActivity() {
 
-    var listMonitorias = arrayListOf<String>()
+    var listTutorias = arrayListOf<String>()
 
     val db = FirebaseFirestore.getInstance()
 
@@ -20,11 +20,12 @@ class AddDisciplinaTutoria : AppCompatActivity() {
         setContentView(R.layout.activity_add_disciplina_tutoria)
 
         this.lerDados()
+        supportActionBar?.title = "Tutorias"
     }
 
     fun lerDados(){
 
-        listMonitorias.clear()
+        listTutorias.clear()
 
         db.collection("monitoriasAgendadas")
             .get()
@@ -32,12 +33,12 @@ class AddDisciplinaTutoria : AppCompatActivity() {
                 for(doc in result){
                     var jo = JSONObject(doc.data)
                     var monitoria = jo.getString("nome")
-                    listMonitorias.add(monitoria)
+                    listTutorias.add(monitoria)
                 }
 
                 listView.adapter =
                     ArrayAdapter(this,android.R.layout.simple_list_item_1,
-                        listMonitorias)
+                        listTutorias)
 
             }
             .addOnFailureListener{e->

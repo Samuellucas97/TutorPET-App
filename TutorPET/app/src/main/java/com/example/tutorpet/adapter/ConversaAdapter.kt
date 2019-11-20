@@ -43,7 +43,7 @@ class ConversaAdapter (private val listConversas: List<Conversa>,
     override fun getItemCount(): Int = listConversas.size
 
     override fun onBindViewHolder(holder: VH, position: Int) {
-        val (nome, materiaMonitoria) = listConversas[position]
+        val (id, nome, materiaMonitoria) = listConversas[position]
 
         holder.apply {
             txtNome.text = nome

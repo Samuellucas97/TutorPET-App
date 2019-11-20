@@ -36,6 +36,8 @@ class ConversasFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         lerDados()
+//        addDados()
+
     }
 
 
@@ -73,6 +75,35 @@ class ConversasFragment : Fragment() {
                 Toast.makeText(activity, "Erro: $e",Toast.LENGTH_LONG).show()
             }
     }
+
+//
+//    fun addDados() {
+//
+//        val conversa = Conversa()
+//
+//        val u = mapOf(
+//            "nome" to conversa.nome,
+//            "materiaMonitoria" to conversa.materiaMonitoria
+//        )
+//
+//        db.collection("conversas")
+//            .add(u)
+//            .addOnSuccessListener {
+//                Toast.makeText(
+//                    activity,
+//                    "Adicionado com sucesso!",
+//                    Toast.LENGTH_LONG).show()
+//
+//                    lerDados()
+//
+//            }
+//            .addOnFailureListener {e ->
+//                Toast.makeText(
+//                    activity,
+//                    "Erro ao Adicionado: $e",
+//                    Toast.LENGTH_LONG).show()
+//            }
+//    }
 
 
 }
