@@ -55,11 +55,21 @@ class TutoriasFragment : Fragment() {
     private fun onMonitoriaAgendadaItemLongClick(tutoriaAgendada: TutoriaAgendada): Boolean {
         var alertDialog  = AlertDialog.Builder(activity)
 
-        alertDialog.setTitle(" Excluir Tutoria ")
-        alertDialog.setMessage("Pretende excluir a tutoria de ${tutoriaAgendada.materiaMonitoria} com o tutor ${tutoriaAgendada.nome}.")
+        alertDialog.setTitle(" Cancelar Tutoria ")
+        alertDialog.setMessage("Pretende cancelar a tutoria de ${tutoriaAgendada.materiaMonitoria} com o tutor ${tutoriaAgendada.nome}.")
 
         alertDialog.setPositiveButton("Sim", {_,_ ->
+        db.collection("monitoriasAgendadas")
+            .document(tutoriaAgendada.id).delete()
+            .addOnSuccessListener {
+                Toast.makeText(activity,"Tutoria cancelada com sucesso", Toast.LENGTH_SHORT).show()
+                monitoriaAgendadaAdapter.notifyItemRemoved(listMonitoriasAgendadas.indexOf(tutoriaAgendada))
+                listMonitoriasAgendadas.remove(tutoriaAgendada)
+            }
 
+            .addOnFailureListener {e->
+                Toast.makeText(activity, " Erro ao cancelar: $e", Toast.LENGTH_LONG).show()
+            }
 
         })
 
