@@ -1,5 +1,6 @@
 package com.example.tutorpet.ui.tutorias
 
+import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -33,9 +34,7 @@ class TutoriasFragment : Fragment() {
         super.onCreate(savedInstanceState)
         retainInstance = true
 
-
     }
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -54,6 +53,18 @@ class TutoriasFragment : Fragment() {
     }
 
     private fun onMonitoriaAgendadaItemLongClick(tutoriaAgendada: TutoriaAgendada): Boolean {
+        var alertDialog  = AlertDialog.Builder(activity)
+
+        alertDialog.setTitle(" Excluir Tutoria ")
+        alertDialog.setMessage("Pretende excluir a tutoria de ${tutoriaAgendada.materiaMonitoria} com o tutor ${tutoriaAgendada.nome}.")
+
+        alertDialog.setPositiveButton("Sim", {_,_ ->
+
+
+        })
+
+        alertDialog.setNegativeButton("Não", {_,_->})
+        alertDialog.show()
         return true
     }
 
