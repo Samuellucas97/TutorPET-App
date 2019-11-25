@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
 import com.example.tutorpet.R
+import com.example.tutorpet.model.User
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_cadastro.*
 
@@ -68,15 +70,16 @@ class CadastroActivity : AppCompatActivity() {
 
             setResult(RESULT_OK,intent)
 
-
-            // Adicionar ao firestore o usuário
-
-
             auth.createUserWithEmailAndPassword(edt_email.text.toString(),edt_senha.text.toString())
                 .addOnCompleteListener(this) {task ->
                     if(task.isSuccessful){
+
+                        salvandoUsuarioNoFirebase()
+
                         Toast.makeText(this@CadastroActivity,
-                            "Usuário cadastrado com sucesso",Toast.LENGTH_LONG).show()
+                            "Usuário cadastrado com sucesso",Toast.LENGTH_SHORT).show()
+
+
                         finish()
                     }else{
                         val resposta = "Falha na criação do usuário: " + task.exception!!.toString()
@@ -88,6 +91,24 @@ class CadastroActivity : AppCompatActivity() {
                 }
 
         }
+    }
+
+    private fun salvandoUsuarioNoFirebase() {
+        val uid = FirebaseAuth.getInstance().uid ?: ""
+        val ref = FirebaseDatabase.getInstance().getReference("/users/$uid")
+
+        val user = User(uid,
+                        edt_nome.text.toString(),
+                        edt_curso.text.toString(),
+                        switchEhPetiano.isChecked
+        )
+
+
+        ref.setValue(user)
+            .addOnSuccessListener {
+//                Log
+            }
+
     }
 
 }

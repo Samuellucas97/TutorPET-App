@@ -1,7 +1,7 @@
 package com.example.tutorpet.model
 
-data class User (var id: String,
+data class User (var uid: String,
                  var nome: String,
-                 var email: String,
                  var curso: String,
-                 var ehPetiano: Boolean )
+                 var ehPetiano: Boolean
+)

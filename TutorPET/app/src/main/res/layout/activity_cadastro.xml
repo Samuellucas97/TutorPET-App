@@ -84,7 +84,7 @@
         />
 
     <Switch
-        android:id="@+id/simpleSwitch"
+        android:id="@+id/switchEhPetiano"
         android:layout_width="wrap_content"
         android:textSize="15dp"
 
