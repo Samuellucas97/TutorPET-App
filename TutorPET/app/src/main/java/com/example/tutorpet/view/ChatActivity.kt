@@ -2,6 +2,7 @@ package com.example.tutorpet.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.tutorpet.R
 
 class ChatActivity : AppCompatActivity() {
 
