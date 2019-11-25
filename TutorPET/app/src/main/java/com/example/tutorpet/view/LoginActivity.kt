@@ -1,5 +1,6 @@
 package com.example.tutorpet
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -19,39 +20,67 @@ class LoginActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
 
-
         btnCadastro.setOnClickListener {
-            startActivity(Intent(this, CadastroActivity::class.java))
+            val intent = Intent(this, CadastroActivity::class.java)
+            startActivityForResult(intent, 10)
         }
 
 
         btnEntrar.setOnClickListener {
+            entrar()
+        }
+    }
 
-            if (edtEmail.text.isEmpty() ) {
-                edtEmail.error =  "Campo E-mail Obrigatório"
+    private fun entrar() {
+        var pref = getSharedPreferences("configuracoes",0)
+        var login = pref.getString("Email", "")
+        var senha = pref.getString("Senha", "")
 
-            }
-            else if (edtSenha.text.isEmpty()) {
-                edtSenha.error =  "Campo Senha Obrigatório"
-            }
-            else {
+        edtEmail.setText(login)
+        edtSenha.setText(senha)
 
-                auth.signInWithEmailAndPassword(edtEmail.text.toString(), edtSenha.text.toString())
-                    .addOnCompleteListener(this) { task ->
-                        if (task.isSuccessful) {
-                            startActivity(Intent(this, HomeActivity::class.java))
-                        } else {
-                            Toast.makeText(
-                                this@LoginActivity,
-                                "Autenticação Falhou!!",
-                                Toast.LENGTH_LONG
-                            ).show()
-                        }
+        login = pref.getString("Email", "")
+        senha = pref.getString("Senha", "")
 
+        if (edtEmail.text.isEmpty() ) {
+            edtEmail.error =  "Campo E-mail Obrigatório"
+
+        }
+        else if (edtSenha.text.isEmpty()) {
+            edtSenha.error =  "Campo Senha Obrigatório"
+        }
+        else {
+
+            auth.signInWithEmailAndPassword(edtEmail.text.toString(), edtSenha.text.toString())
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        startActivity(Intent(this, HomeActivity::class.java))
+                    } else {
+                        Toast.makeText(
+                            this@LoginActivity,
+                            "Autenticação Falhou!!",
+                            Toast.LENGTH_LONG
+                        ).show()
                     }
+
+                }
+        }
+    }
+
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == 10 && resultCode == Activity.RESULT_OK){
+            data?.let {
+                val email: String? = data.getStringExtra("email")
+                val senha: String? = data.getStringExtra("senha")
+
+                edtEmail.setText(email)
+                edtSenha.setText(senha)
+
             }
         }
-
-
     }
+
 }
