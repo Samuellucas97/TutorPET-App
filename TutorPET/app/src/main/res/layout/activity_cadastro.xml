@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".view.CadastroActivity">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nome:"
+        android:gravity="left"
+        android:textSize="19sp"
+        />
+
+    <EditText
+        android:id="@+id/edt_nome"
+        android:background="@drawable/bg_edittext_rounded"
+        android:textSize="19sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:inputType="textEmailAddress" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Curso:"
+        android:gravity="left"
+        android:textSize="19sp"
+        />
+
+
+    <EditText
+        android:id="@+id/edt_curso"
+        android:background="@drawable/bg_edittext_rounded"
+        android:textSize="19sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:inputType="textEmailAddress" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="E-mail:"
+        android:gravity="left"
+        android:textSize="19sp"
+        />
+
+    <EditText
+        android:id="@+id/edt_email"
+
+        android:background="@drawable/bg_edittext_rounded"
+        android:textSize="19sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:inputType="textEmailAddress"
+        />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Senha:"
+        android:gravity="left"
+        android:textSize="19sp"
+        />
+
+    <EditText
+        android:id="@+id/edt_senha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_edittext_rounded"
+        android:textSize="19sp"
+        android:layout_marginBottom="30dp"
+        android:inputType="textPassword"
+        />
+
+    <Switch
+        android:id="@+id/simpleSwitch"
+        android:layout_width="wrap_content"
+        android:textSize="15dp"
+
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:textAlignment="center"
+        android:text="Participa do Programa Educação Tutorial do curso de Ciência da Computação"
+        android:textOn="On"
+        android:textOff="Off"
+
+
+        android:layout_gravity="center"
+
+        android:layout_marginBottom="30dp"/>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:text="Confirmar"
+        style="@style/Widget.AppCompat.Button.Colored"
+        />
+
+</LinearLayout>

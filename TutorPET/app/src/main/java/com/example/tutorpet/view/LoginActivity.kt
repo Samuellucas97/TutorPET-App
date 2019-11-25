@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.tutorpet.view.CadastroActivity
 import com.example.tutorpet.view.HomeActivity
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
@@ -17,6 +18,12 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         auth = FirebaseAuth.getInstance()
+
+
+        btnCadastro.setOnClickListener {
+            startActivity(Intent(this, CadastroActivity::class.java))
+        }
+
 
         btnEntrar.setOnClickListener {
 

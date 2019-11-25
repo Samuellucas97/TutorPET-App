@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChatActivity">
+    tools:context=".view.ChatActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/messageList"
@@ -38,24 +38,33 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent">
 
+
+
+
         <EditText
             android:id="@+id/txtMessage"
             android:hint="Enter message"
-            android:background="@android:color/transparent"
+            android:background="@drawable/bg_edittext_rounded"
             android:layout_gravity="center"
+            android:paddingStart="10dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
+
             android:maxLines="6"/>
 
         <Button
             android:id="@+id/btnSend"
-            android:text="SEND"
+            android:text="Enviar"
             android:textSize="14dp"
             android:clickable="true"
-            android:layout_width="64dp"
+            android:layout_width="wrap_content"
+            android:background="@drawable/bg_button_rounded"
+
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
             android:layout_height="48dp"
             android:gravity="center"
             android:layout_gravity="bottom" />

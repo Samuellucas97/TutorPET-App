@@ -16,13 +16,6 @@
         android:layout_height="221dp"
         app:srcCompat="@drawable/logo" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Conecte-se com sua conta SIGAA"
-        android:layout_marginBottom="40dp" />
-
 
     <EditText
         android:id="@+id/edtEmail"
@@ -60,7 +53,15 @@
         android:text="ENTRAR" />
 
 
+    <Button
+        android:id="@+id/btnCadastro"
+        android:layout_marginTop="20dp"
+        android:textAllCaps="false"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+android:text="Você é novo? Cadastre-se"
 
-
+        android:textColor="@android:color/holo_blue_light"
+    android:background="@android:color/transparent"/>
 
 </LinearLayout>
