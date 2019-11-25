@@ -25,11 +25,13 @@
 
 
     <EditText
+        android:id="@+id/edtEmail"
         android:layout_width="270dp"
-        android:hint="Usuário"
+        android:hint="Email"
         android:layout_height="wrap_content"/>
 
     <EditText
+        android:id="@+id/edtSenha"
         android:layout_width="270dp"
         android:hint="Senha"
         android:layout_height="wrap_content"

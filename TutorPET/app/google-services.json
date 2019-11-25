@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "95907289054",
-    "firebase_url": "https://tutorpet-9b134.firebaseio.com",
-    "project_id": "tutorpet-9b134",
-    "storage_bucket": "tutorpet-9b134.appspot.com"
+    "project_number": "718656416114",
+    "firebase_url": "https://app-tutorpet-android.firebaseio.com",
+    "project_id": "app-tutorpet-android",
+    "storage_bucket": "app-tutorpet-android.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:95907289054:android:c74246ed69fad1ca86af4f",
+        "mobilesdk_app_id": "1:718656416114:android:430816497ea399ee2c95eb",
         "android_client_info": {
           "package_name": "com.example.tutorpet"
         }
       },
       "oauth_client": [
         {
-          "client_id": "95907289054-4q65mqf22fimc7hokrn07mjt5qtadu9t.apps.googleusercontent.com",
+          "client_id": "718656416114-atnp318uaq3oj1amh8l3drhbqi8crcrp.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAM1jNOP3pWaCaWmo9MQVOac6ijHzHpTCA"
+          "current_key": "AIzaSyBzBDQvGIcbSqv4TfTEfTIBBtQGCaF6W_w"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "95907289054-4q65mqf22fimc7hokrn07mjt5qtadu9t.apps.googleusercontent.com",
+              "client_id": "718656416114-atnp318uaq3oj1amh8l3drhbqi8crcrp.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
