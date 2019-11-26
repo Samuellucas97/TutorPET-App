@@ -20,7 +20,7 @@ class AddDisciplinaTutoria : AppCompatActivity() {
         setContentView(R.layout.activity_add_disciplina_tutoria)
 
         this.lerDados()
-        supportActionBar?.title = "Tutorias"
+        supportActionBar?.title = "Minhas Tutorias"
     }
 
     fun lerDados(){
@@ -35,6 +35,7 @@ class AddDisciplinaTutoria : AppCompatActivity() {
                     var monitoria = jo.getString("nome")
                     listTutorias.add(monitoria)
                 }
+
 
                 listView.adapter =
                     ArrayAdapter(this,android.R.layout.simple_list_item_1,

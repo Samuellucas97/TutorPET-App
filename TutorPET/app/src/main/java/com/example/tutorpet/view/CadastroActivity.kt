@@ -95,19 +95,28 @@ class CadastroActivity : AppCompatActivity() {
 
     private fun salvandoUsuarioNoFirebase() {
         val uid = FirebaseAuth.getInstance().uid ?: ""
-        val ref = FirebaseDatabase.getInstance().getReference("/users/$uid")
+
+        var tipoDeUsuario = ""
+
+        if( switchEhPetiano.isChecked )
+            tipoDeUsuario = "/petiano/"
+        else
+            tipoDeUsuario = "/users/"
+
+
+        val ref = FirebaseDatabase.getInstance().getReference("$tipoDeUsuario$uid")
 
         val user = User(uid,
                         edt_nome.text.toString(),
-                        edt_curso.text.toString(),
-                        switchEhPetiano.isChecked
+                        edt_curso.text.toString()
         )
-
 
         ref.setValue(user)
             .addOnSuccessListener {
 //                Log
             }
+
+
 
     }
 
