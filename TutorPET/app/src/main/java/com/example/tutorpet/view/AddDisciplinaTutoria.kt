@@ -6,11 +6,15 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.example.tutorpet.R
+import com.example.tutorpet.ui.conversas.ConversasFragment
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_add_disciplina_tutoria.*
+import kotlinx.android.synthetic.main.activity_add_disciplina_tutoria.fabAdd
+import kotlinx.android.synthetic.main.fragment_tutorias.*
 import org.json.JSONObject
 import java.util.*
 
@@ -25,7 +29,31 @@ class AddDisciplinaTutoria : AppCompatActivity() {
         setContentView(R.layout.activity_add_disciplina_tutoria)
 
         this.lerDados()
-        supportActionBar?.title = "Minhas Tutorias"
+
+        supportActionBar?.title = "Minhas Disciplinas de Tutoria"
+
+
+
+        var pref = getSharedPreferences("configuracoes",0)
+
+        var ehpetiano = pref?.getBoolean("ehpetiano", false)
+
+
+        if( ehpetiano == false ){
+            fabAdd.visibility = View.INVISIBLE
+            supportActionBar?.title = "Disciplinas disponiveis"
+
+            listView.setOnItemClickListener{_,_,_,_ ->
+                val intent = Intent(this, HomeActivity::class.java)
+                startActivity(intent)
+            }
+        }else{
+
+            fabAdd.setOnClickListener {
+                startActivity(Intent(this, NovaDisciplina::class.java ))
+            }
+
+        }
     }
 
     fun lerDados(){

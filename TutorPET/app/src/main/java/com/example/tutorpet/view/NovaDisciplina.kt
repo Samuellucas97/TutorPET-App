@@ -2,6 +2,7 @@ package com.example.tutorpet.view
 
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
@@ -32,6 +33,7 @@ class NovaDisciplina : AppCompatActivity() {
                 parent, view, position, id ->
             disciplina = listDisciplinas[position]
             edt_nome.setText(disciplina.nome)
+           // Log.d("d", disciplina.nome)
 
         }
 
@@ -96,7 +98,7 @@ class NovaDisciplina : AppCompatActivity() {
             val disciplina = hashMapOf(
                 "nome" to edt_nome.text.toString())
 
-            db.collection("users")
+            db.collection("disciplinas")
                 .add(disciplina)
                 .addOnSuccessListener { docref ->
                     Toast.makeText(this,
