@@ -20,7 +20,7 @@
 
     <fragment
         android:id="@+id/navigation_forum"
-        android:name="com.example.tutorpet.ui.tutorias.TutoriasFragment"
+        android:name="com.example.tutorpet.ui.forum.ForumFragment"
         android:label="Forum"
         tools:layout="@layout/fragment_tutorias" />
 

@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.item_outra_mensagem.view.*
 private const val VIEW_TYPE_MY_MESSAGE = 1
 private const val VIEW_TYPE_OTHER_MESSAGE = 2
 
-class MessageAdapter (val context: Context) : RecyclerView.Adapter<MessageViewHolder>() {
+class MessageAdapter (val context: Context?) : RecyclerView.Adapter<MessageViewHolder>() {
     private val messages: ArrayList<Message> = ArrayList()
 
     fun addMessage(message: Message){
