@@ -118,7 +118,6 @@ class ForumFragment : Fragment() {
             messageList.scrollToPosition(adapter.itemCount - 1);
 
         }
-
         pusher.connect()
     }
 

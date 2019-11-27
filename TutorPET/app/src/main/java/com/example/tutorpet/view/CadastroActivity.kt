@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
 import com.example.tutorpet.R
+import com.example.tutorpet.model.Conversa
 import com.example.tutorpet.model.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
@@ -62,6 +63,7 @@ class CadastroActivity : AppCompatActivity() {
 
             edt.putString("Email", email)
             edt.putString("Senha", senha)
+            edt.putBoolean("ehpetiano", switchEhPetiano.isChecked)
             edt.commit()
 
             val intent: Intent = Intent()
@@ -98,26 +100,53 @@ class CadastroActivity : AppCompatActivity() {
 
         var tipoDeUsuario = ""
 
-        if( switchEhPetiano.isChecked )
-            tipoDeUsuario = "/petiano/"
+        var user = hashMapOf<String,Any>()
+
+        if( switchEhPetiano.isChecked ) {
+            tipoDeUsuario = "petiano"
+
+            user = hashMapOf(
+                "uid" to uid,
+                "nome " to edt_nome.text.toString(),
+                "curso" to edt_curso.text.toString(),
+                "disciplinas" to arrayListOf<String>(),
+                "ehpetiano" to switchEhPetiano.isChecked.toString()
+            )
+        }
         else
-            tipoDeUsuario = "/users/"
+        {
+            tipoDeUsuario = "users"
 
 
-        val ref = FirebaseDatabase.getInstance().getReference("$tipoDeUsuario$uid")
+            user = hashMapOf("uid" to uid,
+                "uid" to uid,
+                "nome " to edt_nome.text.toString(),
+                "curso" to edt_curso.text.toString(),
+                "disciplinas" to arrayListOf<String>(),
+                "ehpetiano" to switchEhPetiano.isChecked.toString(),
+                "monitoriasAgendadas" to hashMapOf<String,Any>()
+        )}
 
-        val user = User(uid,
-                        edt_nome.text.toString(),
-                        edt_curso.text.toString()
-        )
-
-        ref.setValue(user)
+        val ref = FirebaseFirestore.getInstance().collection(tipoDeUsuario).document(uid)
+            .set(user)
             .addOnSuccessListener {
-//                Log
+                Toast.makeText(
+                    this,
+                    "Adicionado com sucesso!",
+                    Toast.LENGTH_LONG).show()
+
+                //lerDados() //
+            }
+            .addOnFailureListener {e ->
+                Toast.makeText(
+                    this,
+                    "Erro ao Adicionado: $e",
+                    Toast.LENGTH_LONG).show()
             }
 
 
-
     }
+
+
 
 }

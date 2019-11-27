@@ -46,7 +46,8 @@ class TutoriasFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        lerDados()
+      //  lerDados()
+
 
         fabAdd.setOnClickListener {
             startActivity(Intent(activity, AddDisciplinaTutoria::class.java ))
@@ -86,7 +87,7 @@ class TutoriasFragment : Fragment() {
         startActivity( intent )
     }
 
-    fun lerDados(){
+    /*fun lerDados(){
 
         listMonitoriasAgendadas.clear()
 
@@ -113,7 +114,7 @@ class TutoriasFragment : Fragment() {
             .addOnFailureListener{e->
                 Toast.makeText(activity, "Erro: $e",Toast.LENGTH_LONG).show()
             }
-    }
+    }*/
 
 //    fun addDados() {
 //

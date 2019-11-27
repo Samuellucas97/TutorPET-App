@@ -32,7 +32,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun entrar() {
-        var pref = getSharedPreferences("configuracoes",0)
+        var pref = this.getSharedPreferences("configuracoes",0)
         var login = pref.getString("Email", "")
         var senha = pref.getString("Senha", "")
 
