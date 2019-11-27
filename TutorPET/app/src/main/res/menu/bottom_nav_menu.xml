@@ -11,4 +11,11 @@
         android:icon="@drawable/ic_monitoria_black_24dp"
         android:title="Tutorias" />
 
+
+    <item
+        android:id="@+id/navigation_forum"
+        android:icon="@drawable/ic_monitoria_black_24dp"
+        android:title="Fórum" />
+
+
 </menu>

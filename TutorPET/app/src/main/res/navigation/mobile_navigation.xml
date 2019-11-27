@@ -17,4 +17,13 @@
         android:label="@string/tutorias"
         tools:layout="@layout/fragment_tutorias" />
 
+
+    <fragment
+        android:id="@+id/navigation_forum"
+        android:name="com.example.tutorpet.ui.tutorias.TutoriasFragment"
+        android:label="Forum"
+        tools:layout="@layout/fragment_tutorias" />
+
+
+
 </navigation>
